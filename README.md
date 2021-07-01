@@ -1,10 +1,9 @@
-﻿# LNDStreamingBackup 
+﻿# LNDInsights - a very basic framework 
 
 
 ## Overview
-This is a bare bones .NET Core Channel Backup utility to use LND gRPC steams to provide live channel backup to Azure Storage Service. 
-It will upload a new channel.backup file every time it gets notified via the gRPC stream of a change.
+Just enough to expose all the LND gRPC stuff so can start tinkering. very much a work in progress.
 
 
 ## How to use
-```./LNDStreamingBackup <path to tls.cert> <path to macaroon> <Azure storage container connection string> <blob container to save to>```
+```./LNDInsights <path to tls.cert> <path to macaroon> <Telegram API key>```

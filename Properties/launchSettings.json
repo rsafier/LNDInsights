@@ -2,7 +2,7 @@
   "profiles": {
     "LNDStreamingBackup": {
       "commandName": "Project",
-      "commandLineArgs": "tls.cert admin.macaroon "
+      "commandLineArgs": ""
     }
   }
 }

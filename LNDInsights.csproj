@@ -5,38 +5,41 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-   <Protobuf Include="**/*.proto" />
-  </ItemGroup>
+
+ 
   
   <ItemGroup>
-    <PackageReference Include="Azure.Core" Version="1.15.0" />
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.9.0" />
-    <PackageReference Include="Azure.Storage.Common" Version="12.8.0" />
     <PackageReference Include="Google.Protobuf" Version="3.17.3" />
-    <PackageReference Include="Grpc.Core" Version="2.38.0" />
-    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.32.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.38.0">
+    <PackageReference Include="Grpc.Core" Version="2.38.1" />
+    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.38.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.38.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference> 
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
-    <PackageReference Include="ServiceStack.Text" Version="5.11.1" />
+    <PackageReference Include="ServiceStack.Text" Version="5.11.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="Telegram.Bot" Version="16.0.0" />
   </ItemGroup>
+
+ 
   
   <ItemGroup>
-    <None Update="admin.macaroon">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="tls.cert">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Protobuf Update="Grpc\routerrpc\router.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
-    <Protobuf Update="Grpc\rpc.proto" GrpcServices="Client"  ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
+      <!--  Getting Errors with these, need to look why, not important right now    -->
+ <!-- 
+    <Protobuf Include="Grpc\verrpc\verrpc.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
+    <Protobuf Include="Grpc\lcclipb\lncli.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
+    -->
+    
+    <Protobuf Include="Grpc\autopilotrpc\autopilot.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
+    <Protobuf Include="Grpc\chainrpc\chainnotifier.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
+    <Protobuf Include="Grpc\invoicesrpc\invoices.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
+    <Protobuf Include="Grpc\signrpc\signer.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
+    <Protobuf Include="Grpc\walletrpc\walletkit.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
+    <Protobuf Include="Grpc\wtclientrpc\wtclient.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
+    <Protobuf Include="Grpc\watchtowerrpc\watchtower.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
+    <Protobuf Include="Grpc\routerrpc\router.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
+    <Protobuf Include="Grpc\rpc.proto" GrpcServices="Client" ProtoRoot="Grpc" OutputDir="$(Protobuf_OutputPath)%(RelativeDir)" />
   </ItemGroup>
 </Project>
